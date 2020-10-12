@@ -1,17 +1,20 @@
 # README
 
-Steps are necessary to get the
-application up and running.
+Live Preview:
 
-- Styles: BULMA CSS
+https://radiant-hollows-94566.herokuapp.com/
+
+- Styling: BULMA CSS
 
 Things you may want to cover:
 
-- Rails version 6
+- Rails version >6
+- Ruby version 2.6.6
 
-Deployment instructions
+Deployment instructions: This steps are necessary to get the
+application up and running.
 
-- run "git clone"
+- run "git clone https://github.com/borissoto/frontend-example.git"
 
 - run "bundle install" in command
 
