@@ -3,6 +3,8 @@
 Steps are necessary to get the
 application up and running.
 
+- Styles: BULMA CSS
+
 Things you may want to cover:
 
 - Rails version 6
