@@ -1,0 +1,31 @@
+<% content_for :title do%>
+  Foodlog &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
+
+  <div class="columns mt-6 is-centered">  
+    <% @treatments.each do |treatment| %>   
+    <div class="column is-one-quarter">
+      <div class="card">  
+        <header class="card-header">
+        <p class="card-header-title"> 
+          <%= treatment.title %>      
+        </p>
+        </header>
+          <div class="card-content">
+            <div class="content">
+              <p> <span class="has-text-weight-bold"><%= treatment.title %></span> </p>
+              <p> <span class="has-text-weight-bold"><%= treatment.cost %></span> $</p>              
+              <p class="italic">Logged <%= time_ago_in_words(treatment.created_at) %> ago </p>
+            </div>
+          </div>
+       
+        <div class="card-footer">
+          <%= link_to 'Show', treatment, class:"card-footer-item" %>
+          <%= link_to 'Edit', edit_treatment_path(treatment), class:"card-footer-item" %>
+          <%= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-footer-item" %>      
+        </div>
+      </div>
+    </div>   
+    <% end %>
+  </div>
+

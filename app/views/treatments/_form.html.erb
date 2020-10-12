@@ -1,0 +1,30 @@
+<%= form_with(model: treatment, local: true) do |form| %>
+   <% if treatment.errors.any? %>
+    <div class="message is-danger">
+    <div class="message-header">
+      <p><%= pluralize(treatment.errors.count, "error") %> prohibited this treatment from being saved:</p>    
+    </div>
+    <div class="message-body">      
+      <ul>
+        <% treatment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, class: "label"  %>
+    <%= form.text_field :title, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost, class: "label"  %>
+    <%= form.text_field :cost, class: "input" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success"%>
+  </div>
+<% end %>

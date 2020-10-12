@@ -1,0 +1,37 @@
+<% content_for :title do%>
+  Patients &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
+
+
+  <div class="columns mt-6 is-centered">  
+    <% @patients.each do |patient| %>   
+    <div class="column is-one-quarter">
+      <div class="card">  
+        <header class="card-header">
+         <p class="card-header-title"> 
+          <%= patient.name %> - <%= patient.treatment.title if patient.treatment.present? %>       
+        </p> 
+        </header>
+          <div class="card-content">
+            <div class="content">
+              <p>Name: <span class="has-text-weight-bold"><%= patient.name %></span> </p>
+              <p>Lastname: <span class="has-text-weight-bold"><%= patient.lastname %></span> </p>
+              <p>Age: <span class="has-text-weight-bold"><%= patient.age %></span> </p>
+              <p>Mobile: <span class="has-text-weight-bold"><%= patient.mobile %></span> </p>
+              <p class="italic">Logged <%= time_ago_in_words(patient.created_at) %> ago </p>
+            </div>
+          </div>
+       
+        <div class="card-footer">
+          <%= link_to 'Show', patient, class:"card-footer-item" %>
+          <%= link_to 'Edit', edit_patient_path(patient), class:"card-footer-item" %>
+          <%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-footer-item" %>      
+        </div>
+      </div>
+    </div>   
+    <% end %>
+  </div>
+
+
+
+

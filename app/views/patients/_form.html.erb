@@ -1,0 +1,47 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div class="message is-danger">
+    <div class="message-header">
+      <p><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</p>    
+    </div>
+    <div class="message-body">      
+      <ul>
+        <% patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <%= form.text_field :name, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname, class: "label" %>
+    <%= form.text_field :lastname, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age, class: "label" %>
+    <%= form.number_field :age, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile, class: "label" %>
+    <%= form.number_field :mobile, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :treatment, class: "label"  %>
+    <div class="select">
+      <%= form.select :treatment_id, Treatment.all.collect {|u| [u.title, u.id]} %>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit class: "button is-success"%>
+  </div>
+<% end %>

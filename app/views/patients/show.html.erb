@@ -1,0 +1,40 @@
+<% content_for :title do %>
+  <%= @patient.name %> &ndash; <%= DateTime.now.to_s(:nice_date) %>  
+<% end %>
+
+<%# <%= params %> 
+<div class="columns mt-6 is-centered">
+
+<div class="column is-on-third">  
+  <nav class="panel is-link">
+    <p class="panel-heading">
+      <%= @patient.name %>
+    </p>
+  
+    <div class="panel-block">
+      Name: <%= @patient.name %>
+    </div>
+    <div class="panel-block">
+      Lastname: <%= @patient.lastname %>
+    </div>
+    <div class="panel-block">
+      Age: <%= @patient.age %>
+    </div>
+    <div class="panel-block">
+      Mobile: <%= @patient.mobile %>
+    </div>
+
+  </nav>
+
+<div class="columns is-mobile"> 
+  <div class="column">
+    <%= link_to 'Edit', edit_patient_path(@patient), class: "button is-gray" %> 
+    <%= link_to 'Delete', patient_path(@patient), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-gray" %>
+  </div>
+  <div class="column">
+   
+  </div>  
+
+</div>
+</div>
+</div>
