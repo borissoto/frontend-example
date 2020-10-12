@@ -7,17 +7,19 @@ Things you may want to cover:
 
 - Rails version 6
 
-- Git Clone
+Deployment instructions
 
-- run "bundler" in command
+- run "git clone"
+
+- run "bundle install" in command
 
 - run "rails db:migrate"
+
+- in browser type "localhost:3000"
 
 - Create Treatment
 
 - Create Patient
-
-- Deployment instructions
 
 - Screenshots
 
